@@ -1,0 +1,40 @@
+{% load static %}
+<section class="client_section layout_padding-bottom">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Отзывы клиентов
+      </h2>
+    </div>
+  </div>
+  <div class="client_container ">
+    <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="box">{% for rev in reviews %}
+              <div class="detail-box">
+                <p>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </p>
+                <p>
+                  {{rev.review}}
+                </p>
+              </div>
+              <div class="client-id">
+                <div class="name">
+                  <h5>
+                    {{rev.name}}
+                  </h5>
+                  <h6>
+                    {{rev.product_name}}
+                  </h6>
+                </div>
+              </div>{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+<!-- Open Content -->
+<section class="bg-light">
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-lg-5 mt-5">
+                 <img src="{{ item.img.url }}" width="400" height="500 alt="{{ product.name }}">
+            </div>
+            <!-- col end -->
+            <div class="col-lg-7 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="h2">{{ item.name }}</h1>
+                        <p class="h3 py-2">${{ item.price }}</p>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <h6>Категория:</h6>
+                            </li>
+                            <li class="list-inline-item">
+                                <p class="text-muted"><strong>{{ item.category }}</strong></p>
+                            </li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <h6>Прозводитель:</h6>
+                            </li>
+                            <li class="list-inline-item">
+                                <p class="text-muted"><strong>{{ item.name_models }}</strong></p>
+                            </li>
+                        </ul>
+                        <h6>Описание:</h6>
+                        <p>{{ item.description }}</p>
+                        <form action="{% url 'cart:cart_add' item.id %}" method="post">
+                            {{ cart_product_form }}
+                            {% csrf_token %}
+                            <input type="submit" value="Add to cart">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Close Content -->

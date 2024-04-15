@@ -1,0 +1,31 @@
+{% load static %}
+<section class="about_section">
+  <div class="container-fluid  ">
+    <div class="row">
+      <div class="col-md-5 ml-auto">
+        <div class="detail-box pr-md-3">
+          <div class="heading_container">
+            <h2>
+              Немного про наш магазин
+            </h2>
+          </div>
+          <p>
+            Широкий выбор товаров. Еще выпускают недорогие товары под собственным брендом.<br/>
+            Огромное количество офлайновых магазинов и пунктов выдачи по всей стране. Есть свои сервисные центры.<br/>
+            Цены на многие товары ниже, чем у конкурентов.
+            Регулярные акции и бонусная программа.<br/>
+            Быстрая доставка до сервисного центра.<br/>
+          </p>
+          <a href="{% url 'about' %}">
+            Read More
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 px-0">
+        <div class="img-box">
+          <img src="{% static 'img/about-img.jpg' %}" alt="about">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

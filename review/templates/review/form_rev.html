@@ -1,0 +1,29 @@
+<section class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="section-heading">
+                    <h2>Here you can leave your review</h2>
+                </div>
+                <form id="contact" action="{% url 'review' %}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        {% for input in review %}
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <label for="{{ input.name }}">{{ input.label }}</label>
+                                    {{ input }}
+                                </fieldset>
+                            </div>
+                        {% endfor %}
+                        <div class="col-md-6">
+                            <fieldset>
+                                 <button type="submit" class="btn btn-primary mb-2">Send Message</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
